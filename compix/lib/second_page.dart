@@ -30,6 +30,13 @@ class _SecondPageState extends State<SecondPage> {
             },
             child: const Text("Change Dark/Light Mode"),
           ),
+          //add dropdown here of different compass options
+          ElevatedButton(
+            onPressed:(){
+              print("change");
+            },
+            child: const Text("Change Compass"),
+          ),
           ElevatedButton(
           onPressed: () {
             showDialog(

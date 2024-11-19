@@ -72,7 +72,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   turns: - turns,
                   duration: const Duration(milliseconds: 250),
                   child: Image.asset(
-                    "lib/asset/compass.png",
+                    "lib/asset/c2.png",
                     fit: BoxFit.fill,
                   ),
                 ),
