@@ -32,17 +32,6 @@ class _SecondPageState extends State<SecondPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-          ElevatedButton(
-            onPressed:(){
-              if(MyApp.of(context).getTheme() == ThemeMode.dark){
-                MyApp.of(context).changeTheme(ThemeMode.light);
-              }
-              else{
-                MyApp.of(context).changeTheme(ThemeMode.dark);
-              }
-            },
-            child: const Text("Change Dark/Light Mode"),
-          ),
           //added dropdown here of different compass options
           DropdownButton<String>(
               value: selectedCompass,
@@ -58,6 +47,18 @@ class _SecondPageState extends State<SecondPage> {
                   }
               },
             ),
+          ElevatedButton(
+            onPressed:(){
+              if(MyApp.of(context).getTheme() == ThemeMode.dark){
+                MyApp.of(context).changeTheme(ThemeMode.light);
+              }
+              else{
+                MyApp.of(context).changeTheme(ThemeMode.dark);
+              }
+            },
+            child: const Text("Change Dark/Light Mode"),
+          ),
+          
           ElevatedButton(
           onPressed: () {
             showDialog(

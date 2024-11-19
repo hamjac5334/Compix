@@ -11,7 +11,7 @@ import 'home_page.dart';
 import 'second_page.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 class MyApp extends StatefulWidget {
   const MyApp({super.key});
