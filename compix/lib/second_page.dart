@@ -9,6 +9,19 @@ class SecondPage extends StatefulWidget {
 }
 
 class _SecondPageState extends State<SecondPage> {
+
+
+  //I am adding new images for different compasses
+  final List<Map<String, String>> compassOptions = [
+    {"name": "Original Compass","image":"lib/asset/compass.png"},
+    {"name": "Gold Compass", "image":"lib/asset/c2.png"},
+    {"name": "Drawing Compass", "image":"lib/asset/draw.png"},
+    {"name": "Metal Compass", "image":"lib/asset/metallic.png"},
+    {"name": "Old Compass", "image":"lib/asset/old.png"},
+  ];
+
+  String selectedCompass = "lib/asset/compass.png";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +32,21 @@ class _SecondPageState extends State<SecondPage> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
+          //added dropdown here of different compass options
+          DropdownButton<String>(
+              value: selectedCompass,
+              items: compassOptions.map((option) {
+                return DropdownMenuItem<String>(
+                  value: option["image"]!,
+                  child: Text(option["name"]!),
+                );
+              }).toList(),
+              onChanged: (String? newValue) {
+                if (newValue != null) {
+                  Navigator.pop(context, newValue); 
+                  }
+              },
+            ),
           ElevatedButton(
             onPressed:(){
               if(MyApp.of(context).getTheme() == ThemeMode.dark){
@@ -30,6 +58,7 @@ class _SecondPageState extends State<SecondPage> {
             },
             child: const Text("Change Dark/Light Mode"),
           ),
+          
           ElevatedButton(
           onPressed: () {
             showDialog(
